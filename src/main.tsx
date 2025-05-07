@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import DroneCard from './components/DroneCard';
+import DroneCard from './components/organism/DroneCard';
 import { DroneTelemetry } from './types/DroneTelemetry';
 
 const sampleTelemetry: DroneTelemetry = {
