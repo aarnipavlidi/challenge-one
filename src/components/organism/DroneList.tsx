@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchTelemetryData } from '../../mocks/fetchTelemetryData';
 import { DroneTelemetry } from '../../types/DroneTelemetry';
 import DroneCard from './DroneCard';
-import { LoaderCircle } from 'lucide-react';
+import CustomWarningWrapper from '../wrappers/CustomWarningWrapper';
 
 /**
  * A component that fetches and displays a list of DroneCards.
@@ -28,16 +28,21 @@ const DroneList: React.FC = () => {
 
   if (loading) {
     return (
-      <div className='flex justify-center gap-2'>
-        <LoaderCircle className='animate-spin' />
-        <div className="text-center">Loading...</div>
-      </div>
-    )
-  }
+      <CustomWarningWrapper
+        icon="LoaderCircle"
+        message="Loading..."
+      />
+    );
+  };
 
   if (!telemetryData || telemetryData.length === 0) {
-    return <div className="text-center">No telemetry data available.</div>;
-  }
+    return (
+      <CustomWarningWrapper
+        icon="Frown"
+        message="No telemetry data available."
+      />
+    );
+  };
 
   return (
     <div className="grid grid-cols-1 gap-4">
