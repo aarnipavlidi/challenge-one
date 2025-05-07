@@ -36,7 +36,8 @@ describe('DroneList', () => {
     // Wait for the loading spinner to disappear
     await waitFor(() => expect(screen.queryByText(/Loading.../i)).not.toBeInTheDocument());
 
-    // Check that the DroneCard is displayed
-    expect(screen.getByText(/Drone ID: DR123/i)).toBeInTheDocument();
+    // Check that the DroneField for "Drone ID" is displayed
+    expect(screen.getByText(/Drone ID:/i)).toBeInTheDocument();
+    expect(screen.getByText(/DR123/i)).toBeInTheDocument();
   });
 });
