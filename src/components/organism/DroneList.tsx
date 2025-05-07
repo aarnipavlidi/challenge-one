@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchTelemetryData } from '../../mocks/fetchTelemetryData';
 import { DroneTelemetry } from '../../types/DroneTelemetry';
 import DroneCard from './DroneCard';
+import { LoaderCircle } from 'lucide-react';
 
 /**
  * A component that fetches and displays a list of DroneCards.
@@ -26,7 +27,12 @@ const DroneList: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <div className="loading-spinner text-center">Loading...</div>;
+    return (
+      <div className='flex justify-center gap-2'>
+        <LoaderCircle className='animate-spin' />
+        <div className="text-center">Loading...</div>
+      </div>
+    )
   }
 
   if (!telemetryData || telemetryData.length === 0) {
