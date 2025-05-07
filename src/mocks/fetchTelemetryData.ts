@@ -26,6 +26,15 @@ export const fetchTelemetryData = async (): Promise<DroneTelemetry[]> => {
           frequency: 2.4,
           status: 'IDLE',
         },
+        {
+          id: 'DR125',
+          coordinates: { latitude: 40.7500, longitude: -74.0000 }, // Outside no-fly zone
+          altitude: 150,
+          speed: 20,
+          signalStrength: 95,
+          frequency: 5.0,
+          status: 'MOVING',
+        },
       ]);
     }, 2000); // Simulate a 2-second delay
   });
