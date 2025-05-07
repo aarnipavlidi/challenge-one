@@ -5,7 +5,7 @@ import DroneList from './components/organism/DroneList';
 
 const App: React.FC = () => {
   return (
-    <div className="app p-6">
+    <div className="p-6">
       <DroneList />
     </div>
   );
