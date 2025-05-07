@@ -30,11 +30,11 @@ const DroneList: React.FC = () => {
   }
 
   if (!telemetryData || telemetryData.length === 0) {
-    return <div className="no-data text-center">No telemetry data available.</div>;
+    return <div className="text-center">No telemetry data available.</div>;
   }
 
   return (
-    <div className="drone-list grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-1 gap-4">
       {telemetryData.map((telemetry) => (
         <DroneCard key={telemetry.id} telemetry={telemetry} />
       ))}

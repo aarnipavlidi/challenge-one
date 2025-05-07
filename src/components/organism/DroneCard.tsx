@@ -19,12 +19,14 @@ const DroneCard: React.FC<DroneCardProps> = ({ telemetry }) => {
 
   return (
     <div
-      className={`drone-card p-4 border rounded-lg shadow-md ${
+      className={`p-4 border rounded-lg shadow-md ${
         inNoFlyZone ? 'bg-red-100 border-red-500' : 'bg-green-100 border-green-500'
       }`}
     >
       <DroneDetails telemetry={telemetry} />
-      {inNoFlyZone && <WarningMessage />}
+      {
+        inNoFlyZone && <WarningMessage />
+      }
     </div>
   );
 };

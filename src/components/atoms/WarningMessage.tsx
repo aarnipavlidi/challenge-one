@@ -7,7 +7,7 @@ import React from 'react';
  */
 const WarningMessage: React.FC = () => {
   return (
-    <p className="warning-message text-red-600 font-semibold">
+    <p className="text-red-600 font-semibold">
       Warning: Drone is in a no-fly zone!
     </p>
   );

@@ -13,7 +13,7 @@ interface DroneFieldProps {
  */
 const DroneField: React.FC<DroneFieldProps> = ({ label, value }) => {
   return (
-    <p className="drone-field">
+    <p>
       <span className="font-bold">{label}:</span> {value}
     </p>
   );
